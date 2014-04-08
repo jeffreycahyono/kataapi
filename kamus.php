@@ -37,7 +37,7 @@ function ambilData () {
 function buatData () {
   $input=file_get_contents("php://input");
   $data = json_decode($input, TRUE);
-  print_r($data);
+  //print_r($data);
   $kata = $data['kata'];
   if(isExistsX($kata))
     errorEuy("Kata $kata sudah ada");
@@ -47,8 +47,8 @@ function buatData () {
 }
 
 function editData ($kata) {
-  //$input=file_get_contents("php://input");
-  //$data = json_decode($input, TRUE);
+  $input=file_get_contents("php://input");
+  $data = json_decode($input, TRUE);
   //$kata = $data['kata'];
   if(!isExistsX($kata))
     errorEuy("Kata $kata belum ada");
